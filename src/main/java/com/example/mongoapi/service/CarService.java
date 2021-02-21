@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -16,5 +17,11 @@ public class CarService {
     public List<Car> findAll(){
         List<Car> cars = carRepository.findAll();
         return cars;
+    }
+
+    //Retorna un solo carro, necesita el _id
+    public Optional<Car> find(String id){
+        Optional<Car> car = carRepository.findById(id);
+        return car ;
     }
 }
