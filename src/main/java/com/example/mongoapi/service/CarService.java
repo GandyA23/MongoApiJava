@@ -38,4 +38,10 @@ public class CarService {
 
         return status;
     }
+
+    //Inserta un carro, requiere enviarle un objeto Car
+    public Car save(Car car){
+        Car c = carRepository.save(car);
+        return c ;
+    }
 }

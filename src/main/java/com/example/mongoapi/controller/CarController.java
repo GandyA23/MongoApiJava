@@ -29,4 +29,13 @@ public class CarController {
         return carService.destroy(id);
     }
 
+    @PostMapping("/save")
+    public Car save(@RequestBody Car car){
+        return carService.save(car);
+    }
+
+    @PutMapping("/update")
+    public Car update(@RequestBody Car car){
+        return carService.save(car);
+    }
 }
