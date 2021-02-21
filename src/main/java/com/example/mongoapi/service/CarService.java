@@ -24,4 +24,18 @@ public class CarService {
         Optional<Car> car = carRepository.findById(id);
         return car ;
     }
+
+    //Borra un carro por id
+    public Boolean destroy(String id){
+        boolean status = false ;
+
+        try{
+            carRepository.deleteById(id);
+            status = true ;
+        }catch (Exception e){
+            System.err.println(e);
+        }
+
+        return status;
+    }
 }
